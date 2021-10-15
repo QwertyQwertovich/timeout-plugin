@@ -1,5 +1,5 @@
 body {
-	background: #000055;
+	background: #03c200;
 	margin: 0;
 	padding: 0;
 	color: black;
@@ -15,7 +15,7 @@ body {
 }
 
 .site_block {
-	background: linear-gradient(135deg, #a5c4ff, #6cffff);
+	background: linear-gradient(135deg, #83ff75, #75ffef);
 	font-size: 22px;
 	padding:  10px;
 	border-radius: 10px;

@@ -74,8 +74,38 @@ async function checkTab(tabId, changeInfo, tab) {
 }
 
 chrome.contextMenus.create({
-	id: "block-current",
+	id: "block-current-120",
+	title: "Block current site for 2 hours",
+	contexts: ["all"]
+})
+
+chrome.contextMenus.create({
+	id: "block-current-60",
+	title: "Block current site for 1 hour",
+	contexts: ["all"]
+})
+
+chrome.contextMenus.create({
+	id: "block-current-45",
+	title: "Block current site for 45 minutes",
+	contexts: ["all"]
+})
+
+chrome.contextMenus.create({
+	id: "block-current-30",
 	title: "Block current site for 30 minutes",
+	contexts: ["all"]
+})
+
+chrome.contextMenus.create({
+	id: "block-current-15",
+	title: "Block current site for 15 minutes",
+	contexts: ["all"]
+})
+
+chrome.contextMenus.create({
+	id: "block-current-5",
+	title: "Block current site for 5 minutes",
 	contexts: ["all"]
 })
 
@@ -86,9 +116,34 @@ chrome.contextMenus.create({
 })
 
 chrome.contextMenus.onClicked.addListener(async (info, tab) => {
-	if (info.menuItemId == "block-current") {
+	if (info.menuItemId == "block-current-30") {
 		let currentTab = await getCurrentTab()
 		TimeoutWorker.addSite(currentTab.url, 30 * 60 * 1000)
+		TimeoutWorker.blockTab(currentTab)
+	}
+	else if (info.menuItemId == "block-current-15") {
+		let currentTab = await getCurrentTab()
+		TimeoutWorker.addSite(currentTab.url, 15 * 60 * 1000)
+		TimeoutWorker.blockTab(currentTab)
+	}
+	else if (info.menuItemId == "block-current-45") {
+		let currentTab = await getCurrentTab()
+		TimeoutWorker.addSite(currentTab.url, 45 * 60 * 1000)
+		TimeoutWorker.blockTab(currentTab)
+	}
+	else if (info.menuItemId == "block-current-60") {
+		let currentTab = await getCurrentTab()
+		TimeoutWorker.addSite(currentTab.url, 60 * 60 * 1000)
+		TimeoutWorker.blockTab(currentTab)
+	}
+	else if (info.menuItemId == "block-current-120") {
+		let currentTab = await getCurrentTab()
+		TimeoutWorker.addSite(currentTab.url, 120 * 60 * 1000)
+		TimeoutWorker.blockTab(currentTab)
+	}
+	else if (info.menuItemId == "block-current-5") {
+		let currentTab = await getCurrentTab()
+		TimeoutWorker.addSite(currentTab.url, 5 * 60 * 1000)
 		TimeoutWorker.blockTab(currentTab)
 	}
 	else if (info.menuItemId == "ama-free") {

@@ -2,7 +2,7 @@
     // Required
     "manifest_version": 3,
     "name": "Timeout Extension",
-    "version": "0.1",
+    "version": "0.2",
 
     "action": {
         "default_title": "Timeout Extension",
